@@ -1,4 +1,4 @@
-import { Plugins } from '@capacitor/core';
+import { Storage } from '@capacitor/storage';
 import Axios from 'axios';
 import { useContext } from 'react';
 import { AuthContext } from './AuthContext';
@@ -13,7 +13,6 @@ export const useAuthentication = () => {
   const login = async (username: string, password: string): Promise<void> => {
     dispatch({ type: 'LOGIN' });
     try {
-      const { Storage } = Plugins;
       const url = `${process.env.REACT_APP_DATA_SERVICE}/login`;
       const { data } = await Axios.post(url, { username, password });
 
@@ -30,7 +29,6 @@ export const useAuthentication = () => {
   const logout = async (): Promise<void> => {
     dispatch({ type: 'LOGOUT' });
     try {
-      const { Storage } = Plugins;
       const url = `${process.env.REACT_APP_DATA_SERVICE}/logout`;
       const headers = { Authorization: 'Bearer ' + state.session!.token };
 

@@ -14,9 +14,15 @@
     "test:upd": "export CI=true; react-scripts test --updateSnapshot"
   },
   "dependencies": {
-    "@capacitor/android": "~2.4.2",
-    "@capacitor/core": "2.4.2",
-    "@capacitor/ios": "~2.4.2",
+    "@capacitor/android": "~3.0.0-beta.6",
+    "@capacitor/app": "~0.3.5",
+    "@capacitor/core": "~3.0.0-beta.6",
+    "@capacitor/haptics": "~0.3.5",
+    "@capacitor/ios": "~3.0.0-beta.6",
+    "@capacitor/keyboard": "~0.5.5",
+    "@capacitor/share": "~0.5.2",
+    "@capacitor/splash-screen": "~0.3.5",
+    "@capacitor/storage": "~0.3.5",
     "@ionic/react": "^5.0.7",
     "@ionic/react-router": "^5.0.7",
     "@ionic/react-test-utils": "0.0.3",
@@ -42,7 +48,7 @@
     "typescript": "3.8.3"
   },
   "devDependencies": {
-    "@capacitor/cli": "2.4.2",
+    "@capacitor/cli": "~3.0.0-beta.6",
     "@ionic/prettier-config": "~1.0.1",
     "husky": "~4.3.0",
     "prettier": "~2.1.2",

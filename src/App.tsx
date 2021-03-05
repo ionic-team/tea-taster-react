@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { Plugins } from '@capacitor/core';
+import { SplashScreen } from '@capacitor/splash-screen';
 import { IonApp, IonRouterOutlet, isPlatform } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { AuthProvider, PrivateRoute } from './core/auth';
@@ -29,8 +29,7 @@ import './theme/global.css';
 
 export const TeaTaster: React.FC = () => {
   useEffect(() => {
-    const { SplashScreen } = Plugins;
-    if (isPlatform('capacitor')) SplashScreen.hide();
+    //if (isPlatform('capacitor')) SplashScreen.hide();
   }, []);
 
   return (

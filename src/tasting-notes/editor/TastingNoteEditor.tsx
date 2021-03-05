@@ -15,13 +15,13 @@ import {
   IonSelectOption,
   IonTextarea,
 } from '@ionic/react';
+import { Share } from '@capacitor/share';
 import { close, shareOutline } from 'ionicons/icons';
 import { Controller, useForm } from 'react-hook-form';
 import { TastingNote, Tea } from '../../shared/models';
 import { Rating } from '../../shared/components';
 import { useTea } from '../../tea/useTea';
 import { useTastingNotes } from '../useTastingNotes';
-import { Plugins } from '@capacitor/core';
 
 interface TastingNoteEditorProps {
   onDismiss: (opts: { refresh: boolean }) => void;
@@ -61,7 +61,6 @@ const TastingNoteEditor: React.FC<TastingNoteEditorProps> = ({
   };
 
   const share = async (): Promise<void> => {
-    const { Share } = Plugins;
     const { brand, name, rating } = getValues();
     await Share.share({
       title: `${brand}: ${name}`,

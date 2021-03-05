@@ -1,4 +1,4 @@
-import { Plugins } from '@capacitor/core';
+import { Storage } from '@capacitor/storage';
 import { useCallback } from 'react';
 import { useAuthInterceptor } from '../core/auth';
 import { Tea } from '../shared/models';
@@ -35,7 +35,6 @@ export const useTea = () => {
   );
 
   const saveTea = async (tea: Tea): Promise<void> => {
-    const { Storage } = Plugins;
     return Storage.set({
       key: `rating${tea.id}`,
       value: tea.rating?.toString() || '0',
@@ -43,7 +42,6 @@ export const useTea = () => {
   };
 
   const fromJsonToTea = async (obj: any): Promise<Tea> => {
-    const { Storage } = Plugins;
     const rating = await Storage.get({ key: `rating${obj.id}` });
     return {
       ...obj,

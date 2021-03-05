@@ -1,4 +1,4 @@
-import { Plugins } from '@capacitor/core';
+import { Storage } from '@capacitor/storage';
 import Axios from 'axios';
 import React, { createContext, useEffect, useReducer, useState } from 'react';
 import { Session } from '../models';
@@ -64,7 +64,6 @@ export const AuthProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    const { Storage } = Plugins;
     (async () => {
       const { value: token } = await Storage.get({ key: 'auth-token' });
       if (!token) return setInitializing(false);

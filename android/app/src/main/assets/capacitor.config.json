@@ -1,13 +1,10 @@
 {
   "appId": "io.ionic.teataster.react",
-  "appName": "Tea Taster",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
+  "appName": "Tea Taster Two!",
   "webDir": "build",
   "plugins": {
     "SplashScreen": {
       "launchAutoHide": false
     }
-  },
-  "cordova": {}
+  }
 }
