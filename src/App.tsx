@@ -29,8 +29,8 @@ import './theme/global.css';
 
 export const TeaTaster: React.FC = () => {
   useEffect(() => {
-    const { SplashScreen } = Plugins;
-    if (isPlatform('capacitor')) SplashScreen.hide();
+    // const { SplashScreen } = Plugins;
+    // if (isPlatform('capacitor')) SplashScreen.hide();
   }, []);
 
   return (
